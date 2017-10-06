@@ -9,6 +9,7 @@ exclude:
 - vendor
 
 theme: jekyll-theme-guides-mbland
+flat_namespace: true
 permalink: pretty
 incremental: true
 
