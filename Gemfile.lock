@@ -20,7 +20,7 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
-    jekyll-theme-guides-mbland (0.2.2)
+    jekyll-theme-guides-mbland (0.2.3)
       jekyll (>= 3.2.0)
       jekyll_pages_api
       jekyll_pages_api_search
