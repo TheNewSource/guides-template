@@ -28,6 +28,9 @@ author:
 # To expand all navigation bar entries by default, set this property to true:
 expand_nav: true
 
+# To flatten the URL namespace so every other page is a child of the root URL:
+flat_namespace: true
+
 # Navigation
 # List links that should appear in the site sidebar here
 navigation:
