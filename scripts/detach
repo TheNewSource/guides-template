@@ -1,0 +1,53 @@
+#! /usr/bin/env bash
+#
+# Remove the template content and create a new Git repository
+#
+# WARNING: This can only be run once!
+#
+# Run this when you're ready to create your new documentation repository and
+# have no more need for the files and instructions that came with the
+# guides-template.
+
+# The default branch for the new documentation repository.
+export PAGES_BRANCH="${PAGES_BRANCH:-pages}"
+
+# List of files that will be removed when `./go detach` is run.
+export TEMPLATE_FILES=()
+TEMPLATE_FILES=('_pages/add-a-new-page/make-a-child-page.md'
+  '_pages/add-a-new-page.md'
+  '_pages/add-images.md'
+  '_pages/advanced-features.md'
+  '_pages/github-setup.md'
+  '_pages/images.png'
+  '_pages/post-your-guide.md'
+  '_pages/update-the-config-file/understanding-baseurl.md'
+  '_pages/update-the-config-file.md'
+  'images/description.png'
+  'images/gh-add-guide.png'
+  'images/gh-branches-link.png'
+  'images/gh-create-branch.png'
+  'images/gh-default-branch.png'
+  'images/gh-settings-button.png'
+  'images/gh-webhook.png')
+
+_detach() {
+  @go.critical_section_begin
+  @go.log INFO 'Clearing Guides Template files'
+  @go.log_command rm -f "${TEMPLATE_FILES[@]}"
+  @go.log INFO "Removing \`$_GO_CMD ${_GO_CMD_NAME[@]}\` command"
+  @go.log_command rm "${BASH_SOURCE[0]}"
+  @go.log INFO 'Removing old git repository'
+  @go.log_command rm -rf '.git'
+  @go.log INFO 'Creating a new git repository'
+  @go.log_command git init
+  @go.log INFO "Creating '$PAGES_BRANCH' branch"
+  @go.log_command git checkout -b "$PAGES_BRANCH"
+  @go.log INFO 'Updating navigation menu'
+  @go.log_command @go update nav
+  @go.log INFO "Adding files for initial commit"
+  @go.log_command git add .
+  @go.critical_section_end
+  @go.log INFO "All done! Run \`git commit\` to create your first commit."
+}
+
+_detach "$@"

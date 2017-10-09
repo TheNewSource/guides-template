@@ -1,0 +1,37 @@
+#! /usr/bin/env bash
+#
+# Runs first-time setup commands for a freshly-cloned repository
+#
+# It first checks that Ruby, Node.js, and Rubygems are installed, then installs
+# the necessary gems, builds the site, and runs the tests.
+
+_setup_check_required_programs_installed() {
+  @go.log INFO "Checking for required system programs"
+
+  if ! command -v ruby >/dev/null; then
+    @go.log ERROR 'Please install Ruby before continuing.'
+  elif ! command -v node >/dev/null; then
+    @go.log ERROR 'Please install Node.js before continuing.'
+  elif ! command -v gem >/dev/null; then
+    @go.log ERROR 'Please install Rubygems before continuing.'
+  fi
+}
+
+_setup_install_gems() {
+  @go.log INFO "Installing Ruby gems"
+
+  if ! command -v bundle >/dev/null && ! gem install bundler; then
+    @go.log ERROR 'Failed to install Bundler.'
+  elif ! bundle install; then
+    @go.log ERROR 'Failed to install gems in Gemfile via Bundler.'
+  fi
+}
+
+_setup() {
+  _setup_check_required_programs_installed &&
+    _setup_install_gems &&
+    @go build &&
+    @go test
+}
+
+_setup "$@"
