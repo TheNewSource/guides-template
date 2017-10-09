@@ -21,7 +21,7 @@ to create an `18f-pages` branch. You can do this using the GitHub interface by
 clicking the **branch: master** button and entering `18f-pages` in the **Switch
 branches/tags** drop-down box:
 
-<img src="{{site.baseurl}}/images/18f-pages.png" alt="GitHub branch creation
+<img src="{{site.baseurl}}/images/gh-create-branch.png" alt="GitHub branch creation
 interface">
 
 ### <a name="set-default-branch"></a>Set the default branch
