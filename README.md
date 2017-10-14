@@ -92,6 +92,6 @@ file.
 
 ## Prior work
 
-This package was originally forked from [18F/pages-server][orig].
+This package was originally forked from [18F/guides-template][orig].
 
-[orig]: https://github.com/18F/pages-server
+[orig]: https://github.com/18F/guides-template
