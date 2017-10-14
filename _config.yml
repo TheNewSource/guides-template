@@ -6,10 +6,11 @@ exclude:
 - LICENSE.md
 - README.md
 - go
+- scripts
+- tests
 - vendor
 
 theme: jekyll-theme-guides-mbland
-flat_namespace: true
 permalink: pretty
 incremental: true
 

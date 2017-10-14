@@ -3,3 +3,5 @@ _site/
 .DS_store
 .*.swp
 .jekyll*
+scripts/go-script-bash/
+tests/bats/
