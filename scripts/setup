@@ -50,7 +50,8 @@ _setup_check_required_programs_installed() {
     @go.log ERROR 'Please install Node.js before continuing.'
   elif ! _setup_check_min_version 'node' "$(node -v)" "$NODE_VERSION_PATTERN" \
     "${MIN_NODE_VERSION[@]}"; then
-    @go.log ERROR 'Please install an updated version of Ruby before continuing.'
+    @go.log ERROR 'Please install an updated version of Node.js' \
+      'before continuing.'
   elif ! command -v gem >/dev/null; then
     @go.log ERROR 'Please install Rubygems before continuing.'
   fi
