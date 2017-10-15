@@ -71,6 +71,9 @@ repos:
 - name: Guides Template
   description: Main repository
   url: https://github.com/mbland/guides-template
+- name: jekyll-theme-guides-mbland
+  description: Theme repository
+  url: https://github.com/mbland/jekyll-theme-guides-mbland
 
 back_link:
   url: https://mike-bland.com/
