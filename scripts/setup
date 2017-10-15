@@ -11,7 +11,7 @@ MIN_RUBY_VERSION=(2 3 3)
 
 export NODE_VERSION_PATTERN='^v([0-9]+)\.([0-9]+)\.([0-9]+)$'
 export MIN_NODE_VERSION
-MIN_NODE_VERSION=(8 7 0)
+MIN_NODE_VERSION=(4 0 0)
 
 _setup_check_min_version() {
   local program_name="$1"
