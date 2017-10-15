@@ -2,34 +2,42 @@
 title: Add images
 ---
 There are two ways to add images. First, if you'd like to keep all your images
-in a separate directory, create an `images/` directory and put your images inside it.
-Otherwise, you can keep an image in the same directory as the page that
-references it.
+in a separate directory, create an `images/` directory and put your images
+inside it.  Otherwise, you can keep an image in the same directory as the page
+that references it.
 
-You may want to use [jpegoptim](https://github.com/tjko/jpegoptim) or
-[optipng](http://optipng.sourceforge.net/) to optimize your images. On OS X,
-both are available via [Homebrew](http://brew.sh/).
+Now within your documents, you can reference your images as advised by the
+[Accessibility Guide][acc-images], using raw HTML or [Markdown image
+syntax][md-img]:
 
-Now within your documents, you can reference your images as outlined below and abiding by
-the advice in the [Accessibility
-Guide](http://18f.github.io/accessibility/images/).
+[acc-images]: https://accessibility.18f.gov/images/
+[md-img]:     https://daringfireball.net/projects/markdown/syntax#img
 
-If an image is in a separate directory:
+```markdown
+![Example image][img-example]
 
-```html
-<img src="{%raw%}{{site.baseurl}}{%endraw%}/images/images.png" alt="Example of
-an included image">
+[img-example]: {% raw %}{% link _pages/images.png %}{% endraw %} "Example image"
 ```
 
-If it's in the same directory as the source document, the link should be
-relative to the parent directory of the document, specified as `..`:
+![Example of an included image][img-example]
 
-```html
-<img src="../images.png" alt="Example of an included image">
+#### Protip: Strip and optimize your images
+
+You may want to use [jpegoptim][] or [optipng][] to strip and optimize your
+images. On OS X, both are available via [Homebrew][]. For example:
+
+[jpegoptim]: https://github.com/tjko/jpegoptim
+[optipng]:   http://optipng.sourceforge.net/
+[Homebrew]:  https://brew.sh/
+
+```shell
+$ brew install jpegoptim optipng
+$ jpegoptim -s _pages/image.jpg
+$ optipng -o 9 -strip all _pages/image.png
 ```
-
-<img src="../images.png" alt="Example of an included image">
 
 ### Next steps
 
-Click the _Update the Config File_ entry in the table of contents.
+Click the _Update the config file_ entry in the table of contents.
+
+[img-example]: {% link _pages/images.png %} "Example image"

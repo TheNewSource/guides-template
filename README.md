@@ -1,24 +1,29 @@
 # Guides Template
 
-This is a skeleton repo containing a
-[CFPB/DOCter](https://github.com/CFPB/DOCter)-based
-[Jekyll](http://jekyllrb.com/) template for "Guides" documents.
+This is a skeleton repo containing a template for "Guides" documents. It uses
+[Jekyll][] as the rendering system, and the
+[`jekyll-theme-guides-mbland`][theme] Ruby gem for the theme.
+
+[Jekyll]: https://jekyllrb.com/
+[theme]:  https://rubygems.org/gems/jekyll-theme-guides-mbland
 
 ## Getting started
 
 ### Installing Ruby
 
-You will need [Ruby](https://www.ruby-lang.org) ( > version 2.1.5 ). To check
-whether it's already installed on a UNIX-like system, open up a terminal
-window (e.g. Terminal on OS X) and type `ruby -v` at the command prompt. For
-example, you should see something similar to the following:
+You will need [Ruby][] version 2.3.3 or greater. To check whether it's already
+installed on a UNIX-like system, open up a terminal window (e.g. Terminal on OS
+X) and type `ruby -v` at the command prompt. For example, you should see
+something similar to the following:
+
+[Ruby]: https://www.ruby-lang.org/
 
 ```shell
 $ ruby -v
-ruby 2.2.3p173 (2015-08-18 revision 51636) [x86_64-darwin14]
+ruby 2.3.3p222 (2016-11-21 revision 56859) [universal.x86_64-darwin17]
 ```
 
-If the version number is less than 2.1.5, or instead you see something like:
+If the version number is less than 2.3.3, or instead you see something like:
 
 ```shell
 $ ruby -v
@@ -26,28 +31,50 @@ $ ruby -v
 ```
 
 Then Ruby is not installed, and you should choose one of the installation
-methods below. [The "Installing Ruby" page of the official
-Ruby language web
-site](https://www.ruby-lang.org/en/documentation/installation/) explains how
-to do this in a number of ways across many different systems.
+methods below. [The "Installing Ruby" page of the official Ruby language web
+site][ruby-install] explains how to do this in a number of ways across many
+different systems.
 
-#### Quickest Ruby install/upgrade for OS X
+* On macOS, consider using [Homebrew][]:
+  ```shell
+  $ brew update
+  $ brew install ruby
+  ```
+* You may consider using a version manager such as [rbenv][] instead.
 
-On OS X, you can use [Homebrew](http://brew.sh/) to install Ruby in
-`/usr/local/bin`, which may require you to update your `$PATH` environment
-variable:
+[ruby-install]: https://www.ruby-lang.org/en/documentation/installation/
+[Homebrew]:     https://brew.sh/
+[rbenv]:        https://github.com/rbenv/rbenv
+
+### Installing Node.js
+
+You will need [Node.js][] version v4.0.0 or greater. Node.js is used by the
+[`jekyll_pages_api_search`][search] gem, integrated into the
+`jekyll-theme-guides-mbland` gem, to build the [Lunr.js][] index.
+
+[search]:  https://rubygems.org/gems/jekyll_pages_api_search
+[Lunr.js]: https://lunrjs.com/
+
+As with Ruby above, check which version you have via:
+
+[Node.js]: https://nodejs.org/
 
 ```shell
-$ brew update
-$ brew install ruby
+$ node -v
+v8.7.0
 ```
 
-#### Optional: using a version manager
+If you don't have version v4.0.0 or greater, or Node.js isn't installed, visit
+the Node.js site and download a suitable version for your system.
 
-Whether or not Ruby is already installed, we strongly recommend using a Ruby
-version manager such as [rbenv](https://github.com/sstephenson/rbenv) or
-[rvm](https://rvm.io/) to help ensure that Ruby version upgrades don't mean
-all your [gems](https://rubygems.org/) will need to be rebuilt.
+* On macOS, consider using [Homebrew][]:
+  ```shell
+  $ brew update
+  $ brew install node
+  ```
+* You may consider using a version manager such as [nvm][] instead.
+
+[nvm]: https://github.com/creationix/nvm
 
 ### Cloning and serving the Guides Template locally
 
@@ -60,15 +87,17 @@ $ cd MY-NEW-GUIDE
 $ ./go serve
 ```
 
-The `./go` script will check that your Ruby version is supported, install the
-[Bundler gem](http://bundler.io/) if it is not yet installed, install all the
-gems needed by the template, and launch a running instance on
+The `./go` script will check that your Ruby and Node version is supported,
+install the [Bundler][] gem if it is not yet installed, install all the gems
+needed by the template, and launch a running instance at
 `http://localhost:4000/`.
+
+[Bundler]: https://bundler.io/
 
 ### Follow the template instructions
 
-The Guides Template will walk you through the rest of the steps to edit and
-publish your guide.
+The Guides Template at `http://localhost:4000/` will walk you through the rest
+of the steps to edit and publish your guide.
 
 ## Feedback and contributions
 
@@ -76,7 +105,7 @@ Feel free to [comment on or file a new GitHub issue][issues] or otherwise ping
 [@mbland](https://github.com/mbland) with any questions or comments you may
 have, especially if the current documentation hasn't addressed your needs.
 
-[issues]: https://github.com/mbland/pages-server/issues
+[issues]: https://github.com/mbland/guides-template/issues
 
 If you'd care to contribute to this project, be it code fixes, documentation
 updates, or new features, please read the [CONTRIBUTING](CONTRIBUTING.md) file.
@@ -92,6 +121,8 @@ file.
 
 ## Prior work
 
-This package was originally forked from [18F/pages-server][orig].
+This repository was originally forked from [18F/guides-template][orig], the
+content of which was derived from [CFPB/DOCter][].
 
-[orig]: https://github.com/18F/pages-server
+[orig]: https://github.com/18F/guides-template
+[CFPB/DOCter]: https://github.com/CFPB/DOCter

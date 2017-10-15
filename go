@@ -93,7 +93,8 @@ fi
 . "$_GO_USE_MODULES" 'log'
 
 if [[ ! -d "$_GO_ROOTDIR/_site" ]]; then
-  @go.setup_project 'setup'
-  exit
+  if ! @go.setup_project 'setup' || [[ -z "$*" ]]; then
+    exit
+  fi
 fi
 @go "$@"
