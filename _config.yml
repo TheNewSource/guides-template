@@ -44,6 +44,9 @@ navigation:
   - text: Make a child page
     url: make-a-child-page/
     internal: true
+- text: Add links
+  url: add-links/
+  internal: true
 - text: Add images
   url: add-images/
   internal: true
