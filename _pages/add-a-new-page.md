@@ -71,6 +71,7 @@ contents to learn how to add links to other websites, as well as internal links
 to other pages within your document.
 
 Alternately, you may click _Make a child page_ to see how to make chapters
-appear as children of related chapters.
+appear as children of related chapters, or _Using Kramdown features_ to learn
+about some advanced formatting features.
 
-[update-nav]: {% link _pages/update-the-config-file.md %}#register-pages-in-nav-bar
+[update-nav]: {{ site.baseurl }}{% link _pages/update-the-config-file.md %}#register-pages-in-the-navigation-bar

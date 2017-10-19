@@ -8,15 +8,17 @@ that references it.
 
 Now within your documents, you can reference your images as advised by the
 [Accessibility Guide][acc-images], using raw HTML or [Markdown image
-syntax][md-img]:
+syntax][md-img] (adding the `{% raw %}{{ site.baseurl }}{% endraw %}` prefix to
+your links as discussed in the _[Add links][]_ chapter):
 
 [acc-images]: https://accessibility.18f.gov/images/
 [md-img]:     https://daringfireball.net/projects/markdown/syntax#img
 
 ```markdown
-![Example image][img-example]
+![Example of an included image][img-example]
 
-[img-example]: {% raw %}{% link _pages/images.png %}{% endraw %} "Example image"
+[img-example]: {% raw %}{{ site.baseurl }}{% link _pages/images.png %}{% endraw %}
+  "Example of an included image"
 ```
 
 ![Example of an included image][img-example]
@@ -40,4 +42,6 @@ $ optipng -o 9 -strip all _pages/image.png
 
 Click the _Update the config file_ entry in the table of contents.
 
-[img-example]: {% link _pages/images.png %} "Example image"
+[img-example]: {{ site.baseurl }}{% link _pages/images.png %}
+  "Example of an included image"
+[Add links]:   {{ site.baseurl }}{% link _pages/add-links.md %}#linking-to-other-pages-within-the-guide

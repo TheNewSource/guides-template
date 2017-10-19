@@ -83,4 +83,4 @@ Once you've finished the steps to create your new guide repo and push it
 to GitHub, click the _Post your guide_ entry in the table of contents for the
 final steps to publish your guide.
 
-[gh-desc]: {% link images/description.png %} "GitHub repo description and website"
+[gh-desc]: {{ site.baseurl }}{% link images/description.png %} "GitHub repo description and website"

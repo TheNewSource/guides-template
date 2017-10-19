@@ -42,5 +42,5 @@ Click the _Add links_ entry in the table of contents to learn how to add links
 to other websites, as well as internal links to other pages within your
 document.
 
-[add-page]: {% link _pages/add-a-new-page.md %}
-[update-nav]: {% link _pages/update-the-config-file.md %}#register-pages-in-nav-bar
+[add-page]: {{ site.baseurl }}{% link _pages/add-a-new-page.md %}
+[update-nav]: {{ site.baseurl }}{% link _pages/update-the-config-file.md %}#register-pages-in-the-navigation-bar
