@@ -61,8 +61,7 @@ For example, the `repos:` entry for this template contains:
 repos:{% for i in site.repos %}
 - name: {{ i.name }}
   description: {{ i.description }}
-  url: {{ i.url }}
-{% endfor %}
+  url: {{ i.url }}{% endfor %}
 ```
 
 For the `description:` property, it's OK to enter something generic like "main
@@ -76,7 +75,8 @@ is written as:
 [repo-url]: {{site.repos[0].url}}
 
 ```markdown
-[{% raw %}{{site.repos[0].name}}{% endraw %} source][repo-url]
+For example, this [{% raw %}{{site.repos[0].name}}{% endraw %} source][repo-url]
+link is written as:
 
 [repo-url]: {% raw %}{{site.repos[0].url}}{% endraw %}
 ```

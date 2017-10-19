@@ -60,8 +60,8 @@ editor][gh-edit]:
 
 Congratulations! Your guide should now be published and accessible to the world!
 
-[gh-settings]: {% link images/gh-settings-button.png %} "GitHub settings page button"
-[gh-default]:  {% link images/gh-default-branch.png %} "GitHub default branch option"
-[gh-webhook]:  {% link images/gh-webhook.png %} "Setting the GitHub webhook"
-[gh-add]:      {% link images/gh-add-guide.png %} "Adding the new Guide"
+[gh-settings]: {{ site.baseurl }}{% link images/gh-settings-button.png %} "GitHub settings page button"
+[gh-default]:  {{ site.baseurl }}{% link images/gh-default-branch.png %} "GitHub default branch option"
+[gh-webhook]:  {{ site.baseurl }}{% link images/gh-webhook.png %} "Setting the GitHub webhook"
+[gh-add]:      {{ site.baseurl }}{% link images/gh-add-guide.png %} "Adding the new Guide"
 [gh-edit]:     https://github.com/mbland/guides/edit/pages/_config.yml

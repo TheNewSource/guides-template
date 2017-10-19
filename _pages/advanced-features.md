@@ -110,4 +110,4 @@ same branch" section of the pages-server README][int-ext].
 
 [int-ext]: https://github.com/mbland/pages-server#publishing-to-internal-and-external-sites-from-the-same-branch
 
-[baseurl]: {% link _pages/update-the-config-file/understanding-baseurl.md %}
+[baseurl]: {{ site.baseurl }}{% link _pages/update-the-config-file/understanding-baseurl.md %}

@@ -14,6 +14,7 @@ export PAGES_BRANCH="${PAGES_BRANCH:-pages}"
 # List of files that will be removed when `./go detach` is run.
 export TEMPLATE_FILES=()
 TEMPLATE_FILES=('_pages/add-a-new-page/make-a-child-page.md'
+  '_pages/add-a-new-page/using-kramdown-features.md'
   '_pages/add-a-new-page.md'
   '_pages/add-images.md'
   '_pages/add-links.md'

@@ -27,11 +27,12 @@ its link via a small link icon.
 [theme]:      https://rubygems.org/gems/{{site.theme}}
 [md-headers]: https://daringfireball.net/projects/markdown/syntax#header
 
-#### Protip: Only use `h3` headers and above
+#### Only use `h3` headers and above
 
 Since the main document title is a `h1` header, and the document section title
 is a `h2` header, you generally want to use `h3` and above in your `_pages`
-files.
+files. This is why automatic section header links are only available for `h3`
+and above.
 
 ### Linking to other pages within the guide
 
@@ -39,10 +40,14 @@ Using the [Jekyll `link` tag][jekyll-link], you can include a reference to
 another page in your document like so:
 
 ```markdown
-[other-page]: {% raw %}{% link _pages/other-page.md %}{% endraw %}
+[other-page]: {% raw %}{{ site.baseurl }}{% link _pages/other-page.md %}{% endraw %}
 ```
 
 [jekyll-link]: https://jekyllrb.com/docs/templates/#link
+
+Every link to another page _must_ be prefixed with
+`{% raw %}{{ site.baseurl }}{% endraw %}`. If you'd like to know why, see the
+_[Understanding the `baseurl:` property][baseurl]_ page.
 
 For example, this link to the next chapter, [Add images][add-images], appears in
 the Markdown source as:
@@ -51,7 +56,7 @@ the Markdown source as:
 For example, this link to the next chapter, [Add images][add-images], appears in
 the Markdown source as:
 
-[add-images]: {% raw %}{% link _pages/add-images.md %}{% endraw %}
+[add-images]: {% raw %}{{ site.baseurl }}{% link _pages/add-images.md %}{% endraw %}
 ```
 
 #### Protip: Put references containing Jekyll `link` tags at the bottom
@@ -68,4 +73,5 @@ argument of a Jekyll `link` tag as the beginning of an emphasized block.
 Click the _Add images_ entry in the table of contents to learn how to add images
 to your guide.
 
-[add-images]: {% link _pages/add-images.md %}
+[add-images]: {{ site.baseurl }}{% link _pages/add-images.md %}
+[baseurl]:    {{ site.baseurl }}{% link _pages/update-the-config-file/understanding-baseurl.md %}
