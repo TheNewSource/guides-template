@@ -13,14 +13,34 @@ will walk you through the rest of the steps to edit and publish your guide.
 
 ## Getting started
 
+If you don't have [Ruby][] and [Node.js][] installed, skip to the **Installing
+Ruby** and **Installing Node.js** sections below before proceeeding.
+
+[Ruby]:    https://www.ruby-lang.org/
+[Node.js]: https://nodejs.org/
+
+To create a new guide and serve it locally, where `MY-NEW-GUIDE` is the name
+of your new repository:
+
+```shell
+$ git clone https://github.com/mbland/guides-template.git MY-NEW-GUIDE
+$ cd MY-NEW-GUIDE
+$ ./go serve
+```
+
+The `./go` script will check that your Ruby and Node version is supported,
+install the [Bundler][] gem if it is not yet installed, install all the gems
+needed by the template, and launch a running instance at
+`http://localhost:4000/`.
+
+[Bundler]: https://bundler.io/
+
 ### Installing Ruby
 
 You will need [Ruby][] version 2.3.3 or greater. To check whether it's already
 installed on a UNIX-like system, open up a terminal window (e.g. Terminal on OS
 X) and type `ruby -v` at the command prompt. For example, you should see
 something similar to the following:
-
-[Ruby]: https://www.ruby-lang.org/
 
 ```shell
 $ ruby -v
@@ -61,8 +81,6 @@ You will need [Node.js][] version v4.0.0 or greater. Node.js is used by the
 
 As with Ruby above, check which version you have via:
 
-[Node.js]: https://nodejs.org/
-
 ```shell
 $ node -v
 v8.7.0
@@ -79,24 +97,6 @@ the Node.js site and download a suitable version for your system.
 * You may consider using a version manager such as [nvm][] instead.
 
 [nvm]: https://github.com/creationix/nvm
-
-### Cloning and serving the site locally
-
-To create a new guide and serve it locally, where `MY-NEW-GUIDE` is the name
-of your new repository:
-
-```shell
-$ git clone https://github.com/mbland/guides-template.git MY-NEW-GUIDE
-$ cd MY-NEW-GUIDE
-$ ./go serve
-```
-
-The `./go` script will check that your Ruby and Node version is supported,
-install the [Bundler][] gem if it is not yet installed, install all the gems
-needed by the template, and launch a running instance at
-`http://localhost:4000/`.
-
-[Bundler]: https://bundler.io/
 
 ## Feedback and contributions
 
