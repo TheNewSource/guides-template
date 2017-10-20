@@ -7,6 +7,10 @@ This is a skeleton repo containing a template for "Guides" documents. It uses
 [Jekyll]: https://jekyllrb.com/
 [theme]:  https://rubygems.org/gems/jekyll-theme-guides-mbland
 
+After setting up your environment and cloning and serving the site locally,
+visit `http://localhost:4000/` to read the Guides Template in your browser. It
+will walk you through the rest of the steps to edit and publish your guide.
+
 ## Getting started
 
 ### Installing Ruby
@@ -76,7 +80,7 @@ the Node.js site and download a suitable version for your system.
 
 [nvm]: https://github.com/creationix/nvm
 
-### Cloning and serving the Guides Template locally
+### Cloning and serving the site locally
 
 To create a new guide and serve it locally, where `MY-NEW-GUIDE` is the name
 of your new repository:
@@ -93,11 +97,6 @@ needed by the template, and launch a running instance at
 `http://localhost:4000/`.
 
 [Bundler]: https://bundler.io/
-
-### Follow the template instructions
-
-The Guides Template at `http://localhost:4000/` will walk you through the rest
-of the steps to edit and publish your guide.
 
 ## Feedback and contributions
 
