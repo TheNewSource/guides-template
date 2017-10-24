@@ -4,7 +4,7 @@
 set_bats_test_suite_name "${BASH_SOURCE[0]%/*}"
 remove_bats_test_dirs
 
-mirror_template_into_test_go_rootdir() {
+mirror_repo_into_test_go_rootdir() {
   . "$_GO_USE_MODULES" 'fileutil'
   @go.mirror_directory "$_GO_ROOTDIR" "$TEST_GO_ROOTDIR"
 }
