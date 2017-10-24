@@ -22,7 +22,7 @@ __setup() {
     "$TEST_GO_ROOTDIR/images/plugh.png")
   local new_file
 
-  mirror_template_into_test_go_rootdir
+  mirror_repo_into_test_go_rootdir
 
   # Avoid having `./go setup` run.
   if [[ ! -d "$TEST_GO_ROOTDIR/_site" ]]; then
@@ -45,7 +45,8 @@ __setup() {
   . "$_GO_USE_MODULES" 'fileutil'
   local __go_collected_file_paths=()
 
-  @go.collect_file_paths "$TEST_GO_ROOTDIR/"{_pages,images}
+  rm -rf "$TEST_GO_ROOTDIR/"{scripts/go-script-bash,tests/bats}
+  @go.collect_file_paths "$TEST_GO_ROOTDIR/"{_pages,images,scripts,tests}
   lines=("${__go_collected_file_paths[@]}")
   printf -v 'output' '%s\n' "${__go_collected_file_paths[@]}"
   assert_lines_equal \
@@ -55,7 +56,17 @@ __setup() {
     "$TEST_GO_ROOTDIR/_pages/index.md" \
     "$TEST_GO_ROOTDIR/images/plugh.png" \
     "$TEST_GO_ROOTDIR/images/quux.png" \
-    "$TEST_GO_ROOTDIR/images/xyzzy.png"
+    "$TEST_GO_ROOTDIR/images/xyzzy.png" \
+    "$TEST_GO_ROOTDIR/scripts/build" \
+    "$TEST_GO_ROOTDIR/scripts/serve" \
+    "$TEST_GO_ROOTDIR/scripts/setup" \
+    "$TEST_GO_ROOTDIR/scripts/test" \
+    "$TEST_GO_ROOTDIR/scripts/update" \
+    "$TEST_GO_ROOTDIR/scripts/update.d/gems" \
+    "$TEST_GO_ROOTDIR/scripts/update.d/nav" \
+    "$TEST_GO_ROOTDIR/scripts/update.d/theme" \
+    "$TEST_GO_ROOTDIR/tests/environment.bash" \
+    "$TEST_GO_ROOTDIR/tests/sample-test.bats"
 
   parse_navigation_menu
   output="$(<"$TEST_GO_ROOTDIR/_config.yml")"

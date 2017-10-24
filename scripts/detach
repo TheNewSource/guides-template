@@ -30,7 +30,8 @@ TEMPLATE_FILES=('_pages/add-a-new-page/make-a-child-page.md'
   'images/gh-create-branch.png'
   'images/gh-default-branch.png'
   'images/gh-settings-button.png'
-  'images/gh-webhook.png')
+  'images/gh-webhook.png'
+  'tests/detach.bats')
 
 _detach() {
   @go.critical_section_begin
